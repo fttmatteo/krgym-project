@@ -1,0 +1,381 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.title-nav {
+  text-decoration: none;
+}
+
+.title-nav h1:hover {
+  color: #894faf;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 70px;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+}
+
+header ul li {
+  margin-left: 20px;
+}
+
+header ul li a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+header ul li a:hover {
+  color: #894faf;
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  z-index: 999;
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+.mobile-nav ul {
+  flex-direction: column;
+  list-style: none;
+  padding: 20px 0;
+}
+
+.mobile-nav ul li {
+  margin: 10px 0;
+}
+
+.mobile-nav ul li a {
+  font-size: 20px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 50px;
+  background-color: #000;
+  padding-top: 70px;
+}
+
+.hero-text h2 {
+  font-size: 60px;
+  line-height: 1.2;
+  color: #fff;
+  margin-right: 20px;
+  margin-left: 70px;
+}
+
+.highlight {
+  color: #894faf;
+}
+
+.hero-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Services Section */
+.services {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.services h2 {
+  color: #894faf;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.services p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.service-images {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-images img {
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* About Us Section */
+.about-us {
+  padding: 100px 50px;
+  background-color: #000;
+}
+
+.about-us h2 {
+  text-align: center;
+  color: #894faf;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.about-us-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-us-content p {
+  width: 50%;
+  font-size: 22px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 12%;
+}
+
+.about-us-image {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  margin-right: -50px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #894faf;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contact input,
+.contact textarea {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact textarea {
+  height: 150px;
+  font-family: sans-serif;
+}
+
+.contact input,
+.contact textarea:focus {
+  outline-color: #894faf;
+}
+
+.contact button {
+  width: 50%;
+  padding: 10px;
+  background-color: #894faf;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #683d9b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hero-text h2 {
+    font-size: 48px;
+    margin-left: 30px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 80%;
+  }
+
+  .about-us-content p {
+    width: 60%;
+  }
+
+  .about-us-image {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .services p {
+    max-width: 75%;
+  }
+
+  .service-images img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-text h2 {
+    font-size: 40px;
+  }
+
+  .about-us-content {
+    flex-direction: column;
+  }
+
+  .about-us-content p {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-us-image {
+    display: none;
+  }
+
+  .services p {
+    max-width: 100%;
+  }
+
+  .service-images img {
+    width: 100%;
+  }
+
+  .contact input,
+  .contact textarea,
+  .contact button {
+    width: 90%;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .about-us h2,
+  .contact h2,
+  .services h2 {
+    font-size: 32px;
+  }
+
+  .about-us-content p {
+    font-size: 18px;
+  }
+
+  .contact input,
+  .contact textarea,
+  .contact button {
+    width: 100%;
+  }
+}

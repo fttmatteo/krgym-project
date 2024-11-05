@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KR GYM</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="title-nav" href="#inicio"><h1>KR GYM</h1></a>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contáctenos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero animate__animated">
+      <div class="hero-text">
+        <h2>
+          Transforma tu <span class="highlight">cuerpo</span>, <br /><span
+            class="highlight"
+            >Supera</span
+          >
+          tus límites.
+        </h2>
+      </div>
+      <img
+        src="/public/assets/img/hombre-home.png"
+        alt="Gimnasio"
+        class="hero-image"
+      />
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services animate__animated">
+      <h2>SERVICIOS</h2>
+      <p>
+        Entrenamiento personalizado, clases grupales de alta intensidad, y
+        asesoría nutricional para ayudarte a alcanzar tus metas de salud y
+        bienestar.
+      </p>
+      <div class="service-images">
+        <img src="/public/assets/img/services1.jpg" alt="Entrenamiento" />
+        <img src="/public/assets/img/services2.jpg" alt="Pesas" />
+        <img src="/public/assets/img/services3.jpg" alt="Gimnasio" />
+      </div>
+    </section>
+
+    <!-- Sección Sobre nosotros -->
+    <section id="nosotros" class="about-us animate__animated">
+      <h2>Sobre nosotros</h2>
+      <div class="about-us-content">
+        <p>
+          Somos un gimnasio enfocado en tu bienestar integral. Con entrenadores
+          certificados y un ambiente motivador, te ayudamos a superar tus
+          límites y alcanzar tus metas, sin importar tu nivel de experiencia.
+        </p>
+        <img
+          src="/public/assets/img/aboutUs.png"
+          alt="Entrenador"
+          class="about-us-image"
+        />
+      </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact animate__animated">
+      <h2>Contáctenos</h2>
+      <form action="#">
+        <input type="text" placeholder="Nombre completo" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <textarea placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">ENVIAR</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>All right reserved © 2024</p>
+    </footer>
+
+    <!-- Script para scroll suave y activación de animaciones -->
+    <script>
+      // Scroll suave entre secciones
+      document.querySelectorAll("nav ul li a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Mostrar animaciones al hacer scroll
+      const animatedElements = document.querySelectorAll(".animate__animated");
+
+      const handleScrollAnimation = () => {
+        animatedElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          // Si el elemento está visible en el viewport
+          if (rect.top < window.innerHeight - 150 && rect.bottom > 150) {
+            el.classList.add("animate__fadeIn");
+            el.style.animationDuration = "1.5s"; // Duración más suave
+            el.style.animationDelay = "0.4s"; // Leve retraso para suavizar
+          }
+        });
+      };
+
+      // Escuchar el evento de scroll
+      window.addEventListener("scroll", handleScrollAnimation);
+
+      // Disparar la función al cargar la página
+      handleScrollAnimation();
+    </script>
+  </body>
+</html>
