@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>KR GYM</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,14 +35,14 @@
       <p>All right reserved © 2024</p>
     </footer>
     <script>
-      // Función para cargar una sección HTML
-      function loadSection(id, file) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(id).innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar la sección:', error));
+    // Función para cargar una sección HTML
+    function loadSection(id, file) {
+    fetch(file)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById(id).innerHTML = data;
+      })
+      .catch(error => console.error('Error al cargar la sección:', error));
     }
 
     // Llamadas para cargar cada sección
@@ -50,38 +50,6 @@
     loadSection('servicios', 'servicios.html');
     loadSection('nosotros', 'nosotros.html');
     loadSection('contacto', 'contacto.html');
-
-      // Scroll suave entre secciones
-      document.querySelectorAll("nav ul li a").forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          target.scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Mostrar animaciones al hacer scroll
-      const animatedElements = document.querySelectorAll(".animate__animated");
-
-      const handleScrollAnimation = () => {
-        animatedElements.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          // Si el elemento está visible en el viewport
-          if (rect.top < window.innerHeight - 150 && rect.bottom > 150) {
-            el.classList.add("animate__fadeIn");
-            el.style.animationDuration = "1.5s"; // Duración más suave
-            el.style.animationDelay = "0.4s"; // Leve retraso para suavizar
-          }
-        });
-      };
-
-      // Escuchar el evento de scroll
-      window.addEventListener("scroll", handleScrollAnimation);
-
-      // Disparar la función al cargar la página
-      handleScrollAnimation();
     </script>
   </body>
 </html>
