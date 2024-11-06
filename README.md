@@ -7,7 +7,7 @@ Este proyecto es una página web simple, utilizando HTML, CSS y JavaScript bási
 1. **Abrir el Proyecto**
 
    - Abre la carpeta del proyecto en visual studio code.
-   - Descarga la extension go live.
+   - Descarga la extension `live server`.
    - Estando en el archivo `index.html` das click en `go live` parte inferior derecha para iniciar el servidor.
 
 2. **Navegadores Compatibles**
