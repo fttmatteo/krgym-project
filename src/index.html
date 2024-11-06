@@ -10,12 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
   <body>
     <header>
@@ -29,74 +27,30 @@
         </ul>
       </nav>
     </header>
-
-    <!-- Sección Inicio -->
-    <section id="inicio" class="hero animate__animated">
-      <div class="hero-text">
-        <h2>
-          Transforma tu <span class="highlight">cuerpo</span>, <br /><span
-            class="highlight"
-            >Supera</span
-          >
-          tus límites.
-        </h2>
-      </div>
-      <img
-        src="/public/assets/img/hombre-home.png"
-        alt="Gimnasio"
-        class="hero-image"
-      />
-    </section>
-
-    <!-- Sección Servicios -->
-    <section id="servicios" class="services animate__animated">
-      <h2>SERVICIOS</h2>
-      <p>
-        Entrenamiento personalizado, clases grupales de alta intensidad, y
-        asesoría nutricional para ayudarte a alcanzar tus metas de salud y
-        bienestar.
-      </p>
-      <div class="service-images">
-        <img src="/public/assets/img/services1.jpg" alt="Entrenamiento" />
-        <img src="/public/assets/img/services2.jpg" alt="Pesas" />
-        <img src="/public/assets/img/services3.jpg" alt="Gimnasio" />
-      </div>
-    </section>
-
-    <!-- Sección Sobre nosotros -->
-    <section id="nosotros" class="about-us animate__animated">
-      <h2>Sobre nosotros</h2>
-      <div class="about-us-content">
-        <p>
-          Somos un gimnasio enfocado en tu bienestar integral. Con entrenadores
-          certificados y un ambiente motivador, te ayudamos a superar tus
-          límites y alcanzar tus metas, sin importar tu nivel de experiencia.
-        </p>
-        <img
-          src="/public/assets/img/aboutUs.png"
-          alt="Entrenador"
-          class="about-us-image"
-        />
-      </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contact animate__animated">
-      <h2>Contáctenos</h2>
-      <form action="#">
-        <input type="text" placeholder="Nombre completo" required />
-        <input type="email" placeholder="Correo electrónico" required />
-        <textarea placeholder="Escribe tu mensaje" required></textarea>
-        <button type="submit">ENVIAR</button>
-      </form>
-    </section>
-
+  <div id="inicio"></div>
+  <div id="servicios"></div>
+  <div id="nosotros"></div>
+  <div id="contacto"></div>
     <footer>
       <p>All right reserved © 2024</p>
     </footer>
-
-    <!-- Script para scroll suave y activación de animaciones -->
     <script>
+      // Función para cargar una sección HTML
+      function loadSection(id, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar la sección:', error));
+    }
+
+    // Llamadas para cargar cada sección
+    loadSection('inicio', 'inicio.html');
+    loadSection('servicios', 'servicios.html');
+    loadSection('nosotros', 'nosotros.html');
+    loadSection('contacto', 'contacto.html');
+
       // Scroll suave entre secciones
       document.querySelectorAll("nav ul li a").forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
